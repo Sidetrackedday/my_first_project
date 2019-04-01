@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+   body {
+    background-image: url("https://i.ytimg.com/vi/UTBWhHSglTM/maxresdefault.jpg");
+    background-size: 110%;
+    color: white;
+   }
+   .container{
+     background: rgba(70,70,70,0.5);
+     height: 70vh;
+     padding-top: 20vh;
+   }
+  </style>
+    <title>my first project</title>
+  </head>
+  <body>
+    <div class="container mt-5 text-center">
+      <div class="row">
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="1"> A </label>
+            <input type="number" class="form-control" id="1" placeholder="Enter number">
+            <small class="form-text "> first variable </small>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="2"> B </label>
+            <input type="number" class="form-control" id="2" placeholder="Enter number">
+            <small class="form-text"> second variable </small>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="3"> C </label>
+            <input type="number" class="form-control" id="3" placeholder="Enter number">
+            <small class="form-text "> therd variable </small>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="button" name="button" OnClick="calculate()"> do it </button>
+      <br>
+      <b>Answer:</b><span id='4'></span>
+    </div>
+
+    <script>
+      function calculate(){
+        var number_A = document.getElementById("1").value;
+        var number_B = document.getElementById("2").value;
+        var number_C = document.getElementById("3").value;
+        var answer_field = document.getElementById('4');
+        var answer = number_B * number_B - (4 * number_A * number_C);
+        console.log(answer);
+        if (answer < 0){
+          answer = "ну тут как бы иди нахуй"
+          answer_field.innerHTML = answer;
+        } else {
+          var x1 = (-number_B + Math.sqrt(answer)) / (2 * number_A);
+          var x2 = (-number_B - Math.sqrt(answer)) / (2 * number_A);
+          answer = " x1: " + x1 + " x2: " + x2;
+          answer_field.innerHTML = answer;
+        }
+      }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
